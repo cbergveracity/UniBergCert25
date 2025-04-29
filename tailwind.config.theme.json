@@ -17,7 +17,8 @@
       "general-color-3": "var(--general-color-3)",
       "general-color-4": "var(--general-color-4)",
       "general-color-5": "var(--general-color-5)",
-      "page-background-primary": "var(--page-background-primary)"
+      "page-background-primary": "var(--page-background-primary)",
+      "text-magenta": "var(--text-magenta)"
     },
     "spacing": {
       "container-small": "var(--container-small)",
