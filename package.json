@@ -33,6 +33,7 @@
     "uniform:publish": "uniform context manifest publish"
   },
   "dependencies": {
+    "@uniformdev/assets": "^20.14.1",
     "@uniformdev/canvas-next-rsc": "^20.11.0",
     "@uniformdev/csk-components": "^6.0.29",
     "@uniformdev/design-extensions-tools": "^6.0.29",
