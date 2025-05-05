@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import { ComponentProps } from '@uniformdev/canvas-next-rsc/component';
-import { formatTime, renderNumberList, UniformDate } from '../../canvas/Countdown/utils';
+import { formatTime, renderNumberList } from '../../canvas/Countdown/utils';
 import { MILLISECONDS_IN_SECOND, SECONDS_IN_DAY } from '../../canvas/Countdown/constants';
-
+import { UniformDate} from '../fieldDefinitions'
 
 export type ArticleAgeComponentParameters = {
     publishDate: UniformDate
