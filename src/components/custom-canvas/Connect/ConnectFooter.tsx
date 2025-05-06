@@ -15,7 +15,7 @@ enum ConnectfooterSlots {
 type ConnectfooterProps = ComponentProps<ConnectfooterParameters, ConnectfooterSlots>;
 
 const ConnectFooterComponent: FC<ConnectfooterProps> = ({ component, context, slots }) => (
-  <footer className='border-t-2 py-4'>
+  <footer className='border-t-2 my-4'>
     <UniformSlot data={component} context={context} slot={slots.connectfootertop} />
   </footer>
 );
