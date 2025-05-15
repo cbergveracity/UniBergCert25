@@ -2,16 +2,19 @@ import { FC } from 'react';
 import Link from "next/link"
 import {
   ComponentProps,
-  UniformSlot,
+  UniformSlot
 } from '@uniformdev/canvas-next-rsc/component';
 import { Asset } from '@uniformdev/assets';
 import { resolveAsset} from '@/utils/assets'
 import Image from 'next/image';
+import {DataWithProperties, LinkParamValue} from '@uniformdev/canvas';
+import { formatUniformLink } from '@/utils/routing';
+
 
 
 type ImageCardParameters = {
   title: string;
-  url: string;
+  url: LinkParamValue;
   image: Asset[];
 };
 
@@ -27,12 +30,12 @@ export const ImageCardComponent: FC<ImageCardProps> = ({title, url, image, compo
   const [resolvedImage] = resolveAsset(image);
 
   return (
-    <Link href={url || " "} className="block h-[35rem] cursor-pointer">
+    <Link href={formatUniformLink(url)} className="block h-[35rem] cursor-pointer">
       <div className="flex flex-col overflow-hidden shadow-md border border-gray-200 h-full transition-shadow hover:shadow-lg">
         {/* Image section - fixed height of 20rem (320px) */}
         <div className="h-80 overflow-hidden">
           <Image
-            src={resolvedImage.url}
+            src={resolvedImage?.url || ''}
             alt={title}
             width={400}
             height={320}
