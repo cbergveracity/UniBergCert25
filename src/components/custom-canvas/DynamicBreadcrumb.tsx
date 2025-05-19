@@ -5,9 +5,17 @@ import { ProjectMapClient, getNodeActiveCompositionEdition } from '@uniformdev/p
 import { cn } from '@/utils/styling';
 import BaseText from '@/components/ui/Text';
 import BaseButton, { ButtonVariant } from '@/components/ui/Button';
+import { DefaultTheme } from 'tailwindcss/types/generated/default-theme';
+import { ViewPort } from '@/types/cskTypes';
+
+type TextSize = keyof DefaultTheme['fontSize'];
 
 export type DynamicBreadcrumbParameters = {
-
+  separator?: string;  
+  size?: TextSize | ViewPort<TextSize>;
+  color?: string; 
+  font?: string;
+  transform?: string;
 };
 
 const projectMap = new ProjectMapClient({
@@ -19,7 +27,7 @@ const projectMap = new ProjectMapClient({
 
 
 type DynamicBreadcrumbProps = ComponentProps<DynamicBreadcrumbParameters>;
-export const DynamicBreadcrumb: FC<DynamicBreadcrumbProps> = async ({ component, context }) => {
+export const DynamicBreadcrumb: FC<DynamicBreadcrumbProps> = async ({ separator, size, color, font, transform, component, context }) => {
     const isLocalized = localesConfig?.locales?.length > 0;
 
     const { nodes } = await projectMap.getNodes({ 
@@ -30,7 +38,7 @@ export const DynamicBreadcrumb: FC<DynamicBreadcrumbProps> = async ({ component,
 
     if (!nodes) return [];
 
-    console.log('nodes', nodes);
+    //console.log('nodes', nodes);
 
     nodes.shift();
 
@@ -68,8 +76,8 @@ export const DynamicBreadcrumb: FC<DynamicBreadcrumbProps> = async ({ component,
         });
       });
 
-    console.log('cleanednodes', cleanedNodes);
-    const size = "xs", color = "text-gray-500", font = "font-sans", transform = "", separator = ">";
+    //console.log('cleanednodes', cleanedNodes);
+    //const size = "xs", color = "text-gray-500", font = "font-sans", transform = "", separator = ">";
 
     return (
         <ul
