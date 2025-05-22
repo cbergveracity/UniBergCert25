@@ -1,5 +1,5 @@
-'use client';
-import { SearchBox } from 'react-instantsearch';
+import { ComponentProps } from '@uniformdev/canvas-next-rsc/component';
+import CanvasSearchBox from './CanvasSearchBox';
 
 type CanvasSearchBoxParameters = {
   searchBoxParams?: {
@@ -10,13 +10,8 @@ type CanvasSearchBoxParameters = {
   };
 };
 
-const CanvasSearchBoxWrap = ({ searchBoxParams }: CanvasSearchBoxParameters) => {
-  const { searchBoxProps } = searchBoxParams || {};
-  return (
-    <div className="searchBox">
-      <SearchBox {...searchBoxProps} />
-    </div>
-  );
+const CanvasSearchBoxWrap = ({ searchBoxParams }: ComponentProps<CanvasSearchBoxParameters>) => {
+  return <CanvasSearchBox searchBoxParams={searchBoxParams} />;
 };
 
 export default CanvasSearchBoxWrap;
