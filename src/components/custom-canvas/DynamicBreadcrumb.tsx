@@ -38,7 +38,7 @@ export const DynamicBreadcrumb: FC<DynamicBreadcrumbProps> = async ({ separator,
 
     if (!nodes) return [];
 
-    //console.log('nodes', nodes);
+    console.log('nodes', nodes);
 
     nodes.shift();
 
@@ -48,10 +48,15 @@ export const DynamicBreadcrumb: FC<DynamicBreadcrumbProps> = async ({ separator,
             node,
             targetLocale: undefined,
           });
+
+          var resultingLink = node.path?.replace(':locale', '');
+          if (node.pathSegment?.startsWith(':')) {
+            resultingLink = resultingLink.replace(node.pathSegment, node.data?.previewValue || '');
+          }
     
           return [
             {
-              link: `${node.path?.replace(':locale', '').replace(node.pathSegment || '', node.data?.previewValue || '')}`,
+              link: `${resultingLink}`,
               title: node.name || '',
               //lastModified: edition?.modified,
               //changeFrequency: 'daily',
@@ -65,9 +70,14 @@ export const DynamicBreadcrumb: FC<DynamicBreadcrumbProps> = async ({ separator,
             node,
             targetLocale: locale,
           });
+
+          var resultingLink = node.path?.replace(':locale', locale);
+          if (node.pathSegment?.startsWith(':')) {
+            resultingLink = resultingLink.replace(node.pathSegment, node.data?.previewValue || '');
+          }
     
           return {
-            link: `${node.path?.replace(':locale', locale).replace(node.pathSegment || '', node.data?.previewValue || '')}`,
+            link: `${resultingLink}`,
             title: node.name,
             //lastModified: edition?.modified,
             //changeFrequency: 'daily',
@@ -76,7 +86,7 @@ export const DynamicBreadcrumb: FC<DynamicBreadcrumbProps> = async ({ separator,
         });
       });
 
-    //console.log('cleanednodes', cleanedNodes);
+    console.log('cleanednodes', cleanedNodes);
     //const size = "xs", color = "text-gray-500", font = "font-sans", transform = "", separator = ">";
 
     return (
