@@ -38,7 +38,6 @@ export const DynamicBreadcrumb: FC<DynamicBreadcrumbProps> = async ({ separator,
 
     if (!nodes) return [];
 
-    console.log('nodes', nodes);
 
     nodes.shift();
 
@@ -86,7 +85,6 @@ export const DynamicBreadcrumb: FC<DynamicBreadcrumbProps> = async ({ separator,
         });
       });
 
-    console.log('cleanednodes', cleanedNodes);
     //const size = "xs", color = "text-gray-500", font = "font-sans", transform = "", separator = ">";
 
     return (
