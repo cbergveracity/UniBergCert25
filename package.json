@@ -33,15 +33,14 @@
     "uniform:publish": "uniform context manifest publish"
   },
   "dependencies": {
-    "@uniformdev/assets": "^20.14.1",
-    "@uniformdev/canvas-algolia": "^19.58.0",
+    "@uniformdev/assets": "^20.18.0",
     "@uniformdev/canvas-next-rsc": "^20.11.0",
     "@uniformdev/csk-components": "^6.0.29",
     "@uniformdev/design-extensions-tools": "^6.0.29",
     "algoliasearch": "^5.24.0",
     "date-fns": "^4.1.0",
     "instantsearch.css": "^8.5.1",
-    "next": "15.2.5",
+    "next": "^15.3.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-instantsearch": "^7.15.7",
