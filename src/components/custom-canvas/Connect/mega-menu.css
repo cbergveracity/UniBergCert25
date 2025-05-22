@@ -1,0 +1,117 @@
+/* Mobile menu toggle functionality */
+.submenu-toggle:checked + .submenu-label + .submenu {
+    display: block;
+  }
+  
+  .submenu-toggle:checked + .submenu-label svg {
+    transform: rotate(180deg);
+  }
+  
+  /* Ensure transitions are smooth */
+  .menu-items,
+  .submenu,
+  .hamburger-icon span,
+  .dropdown-indicator svg {
+    transition: all 0.3s ease;
+  }
+  
+  /* Hamburger animation */
+  #menu-toggle:checked + .hamburger-icon span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  
+  #menu-toggle:checked + .hamburger-icon span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  #menu-toggle:checked + .hamburger-icon span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  
+  /* Desktop menu layout fixes */
+  @media (min-width: 1024px) {
+    .mega-menu {
+      position: relative;
+    }
+  
+    .menu-items {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+    }
+  
+    .menu-item {
+      position: static;
+    }
+  
+    .menu-item .submenu {
+      position: absolute;
+      left: 0;
+      right: 0;
+      width: 100%;
+      top: 100%;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+  
+    /* Dropdown indicator animation on hover */
+    .menu-item:hover .dropdown-indicator svg {
+      transform: rotate(180deg);
+    }
+  
+    /* Simplified dropdown styling */
+    .submenu ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      padding: 1rem 1.5rem;
+    }
+  
+    .submenu li {
+      padding: 0.5rem 1rem 0.5rem 0;
+    }
+  }
+  
+  /* Fix for mobile menu behavior */
+  @media (max-width: 1023px) {
+    .menu-item .submenu {
+      display: none;
+    }
+  
+    .submenu-toggle:checked + .submenu-label + .submenu {
+      display: block;
+    }
+  
+    /* Prevent hover behavior on mobile */
+    .menu-item:hover .submenu {
+      display: none;
+    }
+  
+    .submenu-label {
+      display: block;
+      cursor: pointer;
+      padding: 8px;
+      margin-top: -8px;
+    }
+  
+    /* Make mobile toggle more prominent */
+    .submenu-label svg {
+      stroke-width: 2.5;
+    }
+  
+    /* Mobile simplified dropdown styling */
+    .submenu ul {
+      padding: 0.5rem 1rem;
+    }
+  
+    .submenu li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+  
+    .submenu li:last-child {
+      border-bottom: none;
+    }
+  }
+  

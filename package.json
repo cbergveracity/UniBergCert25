@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "@uniformdev/assets": "^20.18.0",
-    "@uniformdev/canvas-next-rsc": "^20.11.0",
+    "@uniformdev/canvas-next-rsc": "^20.18.0",
     "@uniformdev/csk-components": "^6.0.29",
     "@uniformdev/design-extensions-tools": "^6.0.29",
     "algoliasearch": "^5.24.0",

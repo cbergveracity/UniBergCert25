@@ -35,7 +35,7 @@ export const ImageCardComponent: FC<ImageCardProps> = ({title, url, image, compo
         {/* Image section - fixed height of 20rem (320px) */}
         <div className="h-80 overflow-hidden">
           <Image
-            src={resolvedImage?.url || ''}
+            src={resolvedImage?.url || 'https://img.uniform.global/p/7gETXjLdSOWu4dGH1tMuhA/LtqkNh1NQhCjA6hdoU5cMw-340x180_newsthumb.png'}
             alt={title}
             width={400}
             height={320}
