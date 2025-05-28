@@ -26,6 +26,10 @@ export type ButtonProps = PropsWithChildren<{
   iconPosition?: 'left' | 'right';
   hoverButtonColor?: string;
   hoverTextColor?: string;
+  eventCategory?: string;
+  eventAction?: string;
+  eventLabel?: string;
+  eventValue?: string;
 }>;
 
 export { Button as default } from './button';
