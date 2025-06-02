@@ -1,10 +1,14 @@
 'use client';
-import { FC } from 'react';
-import { ComponentProps } from '@uniformdev/canvas-next-rsc/component';
-import { renderHits } from './Hit';
+import { ComponentProps } from "@uniformdev/canvas-next-rsc/component"; 
+import CanvasHitsWrap from "./CanvasHitsWrap";
 
-const CanvasHits = (componentProps: ComponentProps) => {
-  return <div className="hits">{renderHits(componentProps.component)}</div>;
+
+const CanvasHits = (props: ComponentProps) => {
+  return (
+    <div className="canvas-hits">
+        <CanvasHitsWrap {...props} />
+    </div>
+  );
 };
 
 export default CanvasHits;
