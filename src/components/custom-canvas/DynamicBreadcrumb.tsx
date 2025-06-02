@@ -41,6 +41,10 @@ export const DynamicBreadcrumb: FC<DynamicBreadcrumbProps> = async ({ separator,
 
     nodes.shift();
 
+    if(nodes.length === 1) { //don't display breadcrumb on home page
+      return <span className="NoBreadcrumb"></span>;
+    };
+
     const cleanedNodes = nodes.flatMap(node => {
         if (!isLocalized || !node.path?.includes(':locale')) {
           const edition = getNodeActiveCompositionEdition({
