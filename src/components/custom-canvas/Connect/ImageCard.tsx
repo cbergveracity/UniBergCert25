@@ -4,7 +4,7 @@ import {
   ComponentProps,
   UniformSlot
 } from '@uniformdev/canvas-next-rsc/component';
-import { Asset } from '@uniformdev/assets';
+import { AssetParamValue } from '@uniformdev/assets';
 import { resolveAsset} from '@/utils/assets'
 import Image from 'next/image';
 import {DataWithProperties, LinkParamValue} from '@uniformdev/canvas';
@@ -15,7 +15,7 @@ import { formatUniformLink } from '@/utils/routing';
 type ImageCardParameters = {
   title: string;
   url: LinkParamValue;
-  image: Asset[];
+  image: AssetParamValue;
 };
 
 enum ImageCardSlots {
