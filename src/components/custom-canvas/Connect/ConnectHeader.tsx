@@ -5,6 +5,7 @@ import {
   UniformSlot,
 } from '@uniformdev/canvas-next-rsc/component';
 import "./mega-menu.css"
+import { UniformLink } from '../fieldDefinitions';
 
 type ConnectHeaderParameters = {
   displayName?: string;
@@ -49,7 +50,7 @@ export const ConnectHeaderComponent: FC<ConnectHeaderProps> = ({ component, cont
 
 type ConnectHeaderFirstLevelParameters = {
     title: string;
-    link: string;
+    link: UniformLink;
     displayName?: string;
   };
 
@@ -61,7 +62,7 @@ type ConnectFirstLevelProps = ComponentProps<ConnectHeaderFirstLevelParameters, 
 export const ConnectHeaderLevelOne: FC<ConnectFirstLevelProps> = ({ title, link, component, context, slots }) => {
     return (
     <li key={component._id} className="menu-item group relative static">
-        <Link href={link || 'undefined'} className="block px-4 py-3 font-medium text-gray-800 hover:text-blue-600 lg:inline-block whitespace-nowrap" >
+        <Link href={link?.path || 'undefined'} className="block px-4 py-3 font-medium text-gray-800 hover:text-blue-600 lg:inline-block whitespace-nowrap" >
             {title}
             {
                 component?.slots?.connectheadersecondlevel && component?.slots?.connectheadersecondlevel.length > 0 && (
@@ -123,7 +124,7 @@ export const ConnectHeaderLevelOne: FC<ConnectFirstLevelProps> = ({ title, link,
 
 type ConnectHeaderSecondLevelParameters = {
     title: string;
-    link: string;
+    link: UniformLink;
     displayName?: string;
   };
 
@@ -132,7 +133,7 @@ type ConnectSecondLevelProps = ComponentProps<ConnectHeaderSecondLevelParameters
 export const ConnectHeaderLevelTwo: FC<ConnectSecondLevelProps> = ({ title, link, component, context, slots }) => (
     <div>
         <li key={component._id} className="w-auto">
-            <Link href="/products/category-1" className="text-gray-600 hover:text-blue-600 whitespace-nowrap">
+            <Link href={link.path} className="text-gray-600 hover:text-blue-600 whitespace-nowrap">
                 {title}
             </Link>
         </li>

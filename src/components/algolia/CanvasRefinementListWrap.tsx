@@ -20,9 +20,7 @@ export type CanvasRefinementListParameters = {
 const CanvasRefinementListWrap = (refinementListParams : ComponentProps<CanvasRefinementListParameters>) => {
   //const { refinementListProps } = refinementListParams || {};
   return (
-    <div>Testing 1234
       <CanvasRefinementList {...refinementListParams} />
-    </div>
   ); 
 };
 
