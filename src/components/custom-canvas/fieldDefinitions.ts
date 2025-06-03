@@ -1,10 +1,8 @@
-
-
 export type UniformDate = {
-    datetime: string;
+  datetime: string;
 };
 
 export type UniformLink = {
-    path: string;
-    type?: string;
+  path: string;
+  type?: string;
 };

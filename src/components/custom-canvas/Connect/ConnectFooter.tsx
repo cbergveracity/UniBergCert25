@@ -1,8 +1,5 @@
 import { FC } from 'react';
-import {
-  ComponentProps,
-  UniformSlot,
-} from '@uniformdev/canvas-next-rsc/component';
+import { ComponentProps, UniformSlot } from '@uniformdev/canvas-next-rsc/component';
 
 type ConnectfooterParameters = {
   displayName?: string;
@@ -15,9 +12,9 @@ enum ConnectfooterSlots {
 type ConnectfooterProps = ComponentProps<ConnectfooterParameters, ConnectfooterSlots>;
 
 const ConnectFooterComponent: FC<ConnectfooterProps> = ({ component, context, slots }) => (
-  <footer className='border-t-2 my-4'>
+  <footer className="my-4 border-t-2">
     <UniformSlot data={component} context={context} slot={slots.connectfootertop} />
   </footer>
 );
 
-export default ConnectFooterComponent; 
+export default ConnectFooterComponent;

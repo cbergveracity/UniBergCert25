@@ -1,19 +1,12 @@
 import { FC } from 'react';
-import Link from "next/link"
-import {
-  ComponentProps,
-  UniformSlot
-} from '@uniformdev/canvas-next-rsc/component';
+import Link from 'next/link';
 import { AssetParamValue } from '@uniformdev/assets';
-import { resolveAsset} from '@/utils/assets'
-import Image from 'next/image';
-import {DataWithProperties, LinkParamValue} from '@uniformdev/canvas';
-import { formatUniformLink } from '@/utils/routing';
+import { LinkParamValue } from '@uniformdev/canvas';
+import { ComponentProps } from '@uniformdev/canvas-next-rsc/component';
 
 type ShadowCardParameters = {
-    title: string;
-    url: LinkParamValue;
-    image: AssetParamValue;
-  };
-  type ShadowCardProps = ComponentProps<ShadowCardParameters>;
-  
+  title: string;
+  url: LinkParamValue;
+  image: AssetParamValue;
+};
+type ShadowCardProps = ComponentProps<ShadowCardParameters>;

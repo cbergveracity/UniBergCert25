@@ -1,10 +1,8 @@
 'use client';
-import { FC } from 'react';
-import { ComponentProps } from '@uniformdev/canvas-next-rsc/component';
 import { Configure, Pagination, RefinementList, SearchBox } from 'react-instantsearch';
+import { ComponentProps } from '@uniformdev/canvas-next-rsc/component';
 import ErrorPropertyCallout from './ErrorPropertyCallout';
 import { renderHits } from './Hit';
-
 
 type CanvasBasicComponentsParameters = {
   searchBoxParams?: {

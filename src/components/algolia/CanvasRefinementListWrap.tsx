@@ -17,11 +17,9 @@ export type CanvasRefinementListParameters = {
   };
 };
 
-const CanvasRefinementListWrap = (refinementListParams : ComponentProps<CanvasRefinementListParameters>) => {
+const CanvasRefinementListWrap = (refinementListParams: ComponentProps<CanvasRefinementListParameters>) => {
   //const { refinementListProps } = refinementListParams || {};
-  return (
-      <CanvasRefinementList {...refinementListParams} />
-  ); 
+  return <CanvasRefinementList {...refinementListParams} />;
 };
 
 export default CanvasRefinementListWrap;

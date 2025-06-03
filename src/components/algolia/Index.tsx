@@ -1,4 +1,4 @@
-
+import { ComponentMapping } from '@uniformdev/csk-components/utils/createComponentResolver';
 import BasicComponents from './BasicComponents';
 import CanvasHits from './CanvasHits';
 import CanvasIndex from './CanvasIndex';
@@ -6,10 +6,9 @@ import CanvasInstantSearch from './CanvasInstantSearch';
 import CanvasPagination from './CanvasPagination';
 import CanvasRefinementListWrap from './CanvasRefinementListWrap';
 import CanvasSearchBoxWrap from './CanvasSearchBoxWrap';
-import { ComponentMapping } from '@uniformdev/csk-components/utils/createComponentResolver';
 
 export const algoliaComponentsMapping: ComponentMapping = {
-  'algolia-basicComponents': { component: BasicComponents }, 
+  'algolia-basicComponents': { component: BasicComponents },
   'algolia-hits': { component: CanvasHits },
   'algolia-index': { component: CanvasIndex },
   'algolia-instantSearch': { component: CanvasInstantSearch },

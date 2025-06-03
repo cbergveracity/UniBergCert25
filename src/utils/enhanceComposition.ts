@@ -10,13 +10,10 @@ export const enhanceComposition = async (composition: RootComponentInstance) => 
 const enhanceParameters = async (component: ComponentInstance, composition: RootComponentInstance) => {
   await enhance({
     composition: component,
-    enhancers: new EnhancerBuilder().component(
-      'button',
-      (button) =>
-        button
-          .parameterName('eventLabel', eventLabelEnhancer)
+    enhancers: new EnhancerBuilder().component('button', button =>
+      button.parameterName('eventLabel', eventLabelEnhancer)
     ),
-    // @ts-expect-error
+    // @ts-expect-error no idea why this is needed - prettier didn't like it
     context: { composition },
   });
 };
@@ -47,6 +44,14 @@ const formatParameterValue = (value: string, context: any, component: any) => {
   return formatted;
 };
 
-const eventLabelEnhancer = async ({ context, component, parameter }: { context: any, component: any, parameter: any }) => {
+const eventLabelEnhancer = async ({
+  context,
+  component,
+  parameter,
+}: {
+  context: any;
+  component: any;
+  parameter: any;
+}) => {
   return formatParameterValue(parameter.value, context, component);
 };

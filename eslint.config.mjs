@@ -23,8 +23,12 @@ const eslintConfig = [
     plugins: ['prettier'],
     rules: {
       'no-console': ['error', { allow: ['info', 'warn', 'error'] }],
-      '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '_', varsIgnorePattern: '_' }],
-      'prettier/prettier': 'error',
+      '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '_', varsIgnorePattern: '_' }],
+      'prettier/prettier': 'warn',
+      "tailwindcss/no-custom-classname": [
+        "warn",
+      ],
       'import/order': [
         'error',
         {

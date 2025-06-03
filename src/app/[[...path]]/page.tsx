@@ -3,8 +3,8 @@ import { emptyPlaceholderResolver } from '@uniformdev/csk-components/components/
 import { DesignExtensionsProvider } from '@uniformdev/design-extensions-tools/components/providers/server';
 import { componentResolver } from '@/components';
 import locales from '@/i18n/locales.json';
-import retrieveRoute from '@/utils/retrieveRoute';
 import { enhanceComposition } from '@/utils/enhanceComposition';
+import retrieveRoute from '@/utils/retrieveRoute';
 
 export default async function Home(props: PageParameters) {
   const resolvedRoute = await retrieveRoute(props, locales.defaultLocale);
