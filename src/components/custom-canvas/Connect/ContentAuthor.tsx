@@ -2,14 +2,14 @@ import { FC } from 'react';
 import { ComponentProps, UniformSlot, UniformText } from '@uniformdev/canvas-next-rsc/component';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Asset } from '@uniformdev/assets';
+import { Asset, AssetParamValueItem } from '@uniformdev/assets';
 import { resolveAsset} from '@/utils/assets'
 import { flattenValues } from '@uniformdev/canvas';
 
 
 export type ContentAuthorComponentParameters = {
     name: string,
-    authorImage: Asset[],
+    authorImage: AssetParamValueItem[],
     authorUrl?: string
 };
 
