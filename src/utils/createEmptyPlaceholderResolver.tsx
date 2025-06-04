@@ -7,7 +7,6 @@ export const DEFAULT_EMPTY_PLACEHOLDER = { component: () => <div className="h-20
 export type EmptyPlaceholderMapping = Record<
   string,
   (props: ResolveEmptyPlaceholderOptions) => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     component: ComponentType<ComponentProps<any, any>> | null;
   }
 >;

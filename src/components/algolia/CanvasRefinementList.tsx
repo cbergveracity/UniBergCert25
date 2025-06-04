@@ -1,26 +1,26 @@
 'use client';
-import { FC } from 'react';
 import { RefinementList } from 'react-instantsearch';
-import { ComponentProps } from '@uniformdev/canvas-next-rsc/component';
-//import ErrorPropertyCallout from './ErrorPropertyCallout';
+// Import the specific type for the parameter value
 import { CanvasRefinementListParameters } from './CanvasRefinementListWrap';
 
-const CanvasRefinementList = ({ refinementListParams }: ComponentProps<CanvasRefinementListParameters>) => {
-  const { refinementListProps } = refinementListParams || {};
-
-  if (!refinementListProps?.attribute) {
+// The component now expects a prop `refinementListParams` of type `RefinementListParameterValue | undefined`
+const CanvasRefinementList = ({ refinementListParams }: { refinementListParams?: CanvasRefinementListParameters }) => {
+  // refinementListParams is the direct object, e.g., { refinementListProps: { attribute: 'brand', ... } } or undefined.
+  const actualAlgoliaProps = refinementListParams?.refinementListProps;
+  if (!actualAlgoliaProps?.attribute) {
     //    return <ErrorPropertyCallout title="Property 'attribute' was not defined for RefinementList component." />;
     return <div>Setting error - attribute</div>;
   }
 
-  const { allowedIndex, ...props } = refinementListProps;
+  // Destructure allowedIndex and the rest of the props for Algolia's RefinementList
+  const { allowedIndex, ...propsForAlgoliaWidget } = actualAlgoliaProps;
 
   return (
     <div className="refinementList">
       <span>
-        Search results are filtered by the following attribute: <code>{refinementListProps?.attribute}</code>
+        Search results are filtered by the following attribute: <code>{actualAlgoliaProps?.attribute}</code>
       </span>
-      <RefinementList {...props} />
+      <RefinementList {...propsForAlgoliaWidget} />
     </div>
   );
 };
